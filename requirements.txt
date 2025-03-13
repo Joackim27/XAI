@@ -4,3 +4,4 @@ matplotlib
 seaborn
 xgboost
 shap
+ipywidgets
