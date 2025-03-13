@@ -1,12 +1,12 @@
 # Explainable AI for Predicting Student Dropout and Academic Success
 
-#### Predict Students' Dropout and Academic Success
+## Predict Students' Dropout and Academic Success
 Realinho, V., Vieira Martins, M., Machado, J., & Baptista, L. (2021). Predict Students' Dropout and Academic Success [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5MC89.
 
 The dataset includes information known at the time of student enrollment – academic path, demographics, and social-economic factors. 
 The problem is formulated as a three category classification task (dropout, enrolled, and graduate) at the end of the normal duration of the course. 
 
-###### Features
+## Features
 ### 1. Marital Status  
 Indicates the student's marital status.  
 - `1` = Single  
@@ -282,11 +282,23 @@ Specifies if the student is an international student.
 - `0` = No  
 
 ### 22. Curricular Units (Per Semester)  
-- **Enrolled**: Number of units the student enrolled in.  
-- **Evaluations**: Number of evaluations taken.  
-- **Approved**: Number of units passed.  
-- **Grade**: Average grade.  
-- **Without Evaluations**: Number of units where no evaluations were taken.  
+Curricular Units (credited)
+Number of courses/subjects in the semester for which the student is awarded credits without needing to complete them again. This often happens if a student transferred from another institution or received credit for prior learning.
+
+Curricular Units (enrolled)
+How many courses the student is officially registered for the semester.
+
+Curricular Units (evaluations)
+Out of the courses the student enrolled in, how many actually had some form of evaluation (exams, graded assignments, etc.) completed.
+
+Curricular Units (approved)
+Number of semester courses that the student passed (i.e., earned a passing grade).
+
+Curricular Units (grade)
+The average grade for the student’s semester courses
+
+Curricular Units (without evaluations)
+Number of courses the student enrolled in but never took any assessments (i.e., no exams or major assignments submitted).
 
 ### 23. Economic Indicators  
 - **Unemployment Rate**: Unemployment rate in the student's residential area.  
@@ -296,4 +308,12 @@ Specifies if the student is an international student.
 ### 24. Target (Student Academic Outcome)
 - `0` = Dropped out  
 - `1` = Enrolled  
-- `2` = Graduated  
+- `2` = Graduated
+
+## Workflow
+### 1. Data Cleaning
+    - **missing values**: No missing values
+    - **Data types**: All numerical except Target column
+
+No need for data cleaning
+### 2. Data exploration via clustering

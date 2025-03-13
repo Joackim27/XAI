@@ -5,3 +5,5 @@ seaborn
 xgboost
 shap
 ipywidgets
+tensorflow
+lime
