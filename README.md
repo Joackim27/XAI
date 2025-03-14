@@ -310,10 +310,26 @@ Number of courses the student enrolled in but never took any assessments (i.e., 
 - `1` = Enrolled  
 - `2` = Graduated
 
-## Workflow
-### 1. Data Cleaning
-    - **missing values**: No missing values
-    - **Data types**: All numerical except Target column
+# Methodology
 
-No need for data cleaning
-### 2. Data exploration via clustering
+## 1. Data Cleaning
+- **Missing Values:** No missing values found.  
+- **Data Types:** All columns are numerical except the target column.  
+- **Conclusion:** No data cleaning required.  
+
+## 2. Data Exploration and Feature Selection
+- Transformed the target column:  
+  - Dropout → `0`  
+  - Enrolled → `1`  
+  - Graduate → `2`  
+- Used a **Seaborn heatmap** to analyze feature correlations and reduce redundancy among curriculum-related features.  
+- Finalized feature selection before proceeding with modeling.  
+
+## 3. Model Selection and Training
+- Implemented **XGBoost** and **Random Forest**, selecting the model with higher accuracy.  
+- If both models have equal accuracy, either one is chosen.  
+
+## 4. Model Interpretation
+- Utilized **SHAP** for both local and global interpretability.  
+- Used **LIME** for additional local interpretability.  
+
